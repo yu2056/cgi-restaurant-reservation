@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Smart Restaurant Reservation System</title>
+    <link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+<div class="app-shell">
+    <header class="topbar">
+        <div>
+            <h1>Smart Restaurant Reservation System</h1>
+            <p>Search, recommend, reserve, and rearrange tables on a visual floor plan.</p>
+        </div>
+        <div class="pill">Spring Boot + Java</div>
+    </header>
+
+    <main class="content-grid">
+        <section class="panel controls">
+            <h2>Search filters</h2>
+            <form id="search-form" class="form-grid">
+                <label>Date
+                    <input type="date" id="date"/>
+                </label>
+                <label>Time
+                    <input type="time" id="time" step="900"/>
+                </label>
+                <label>Party size
+                    <input type="number" id="partySize" min="1" max="20" value="2"/>
+                </label>
+                <label>Visit duration (min)
+                    <input type="number" id="durationMinutes" min="30" step="15" value="120"/>
+                </label>
+                <label>Zone
+                    <select id="zone">
+                        <option value="">Any</option>
+                        <option value="TERRACE">Terrace</option>
+                        <option value="DINING_HALL">Dining hall</option>
+                        <option value="PRIVATE_ROOM">Private room</option>
+                    </select>
+                </label>
+                <label>Customer name
+                    <input type="text" id="customerName" placeholder="Guest name"/>
+                </label>
+            </form>
+
+            <div class="prefs">
+                <label><input type="checkbox" value="PRIVACY"/> Privacy / quiet corner</label>
+                <label><input type="checkbox" value="WINDOW"/> Window seat</label>
+                <label><input type="checkbox" value="ACCESSIBLE"/> Accessible</label>
+                <label><input type="checkbox" value="NEAR_PLAY_AREA"/> Near children's area</label>
+            </div>
+
+            <div class="actions">
+                <button id="search-btn" class="primary">Find best table</button>
+                <button id="book-btn">Book best recommendation</button>
+                <button id="refresh-btn">Refresh plan</button>
+            </div>
+
+            <div class="tabs">
+                <button id="guest-tab" class="tab active">Guest view</button>
+                <button id="admin-tab" class="tab">Admin view</button>
+            </div>
+
+            <div id="message" class="message"></div>
+
+            <div class="card">
+                <h3>Menu suggestion</h3>
+                <div id="menu-suggestion">Pick filters to see a dish suggestion.</div>
+            </div>
+
+            <div class="card">
+                <h3>Upcoming reservations</h3>
+                <div id="reservations-list" class="stack"></div>
+            </div>
+        </section>
+
+        <section class="panel plan-panel">
+            <div class="plan-header">
+                <h2>Restaurant floor plan</h2>
+                <div class="legend">
+                    <span><i class="dot free"></i> Free</span>
+                    <span><i class="dot occupied"></i> Occupied</span>
+                    <span><i class="dot recommended"></i> Recommended</span>
+                    <span><i class="dot combined"></i> Combined</span>
+                </div>
+            </div>
+            <div id="plan" class="plan" aria-label="Restaurant floor plan"></div>
+            <div class="hint">
+                Drag tables in admin mode. Occupied tables are dimmed; recommended ones are highlighted.
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="/app.js"></script>
+</body>
+</html>
