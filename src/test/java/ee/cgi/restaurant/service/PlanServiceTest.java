@@ -1,15 +1,14 @@
 package ee.cgi.restaurant.service;
 
-import ee.cgi.restaurant.dto.ReservationRequest;
-import ee.cgi.restaurant.model.Preference;
-import ee.cgi.restaurant.model.Zone;
-import org.junit.jupiter.api.Test;
-
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.jupiter.api.Test;
+
+import ee.cgi.restaurant.dto.ReservationRequest;
+import ee.cgi.restaurant.model.Preference;
 
 class PlanServiceTest {
 

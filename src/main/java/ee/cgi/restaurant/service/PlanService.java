@@ -1,5 +1,14 @@
 package ee.cgi.restaurant.service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.EnumSet;
+import java.util.List;
+import java.util.Set;
+
+import org.springframework.stereotype.Service;
+
 import ee.cgi.restaurant.dto.BookingResponse;
 import ee.cgi.restaurant.dto.PlanResponse;
 import ee.cgi.restaurant.dto.ReservationRequest;
@@ -10,17 +19,8 @@ import ee.cgi.restaurant.model.Reservation;
 import ee.cgi.restaurant.model.ReservationView;
 import ee.cgi.restaurant.model.RestaurantTable;
 import ee.cgi.restaurant.model.SearchCriteria;
-import ee.cgi.restaurant.model.TableFeature;
 import ee.cgi.restaurant.model.TableView;
 import ee.cgi.restaurant.model.Zone;
-import org.springframework.stereotype.Service;
-
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.util.EnumSet;
-import java.util.List;
-import java.util.Set;
 
 @Service
 public class PlanService {

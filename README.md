@@ -66,12 +66,12 @@ Random seed reservations are created on startup so the floor plan is not empty.
 
 ## Time spent
 
-Fill in your actual time estimate before submission.
+12 days of constant work with exploring of new elements what made this work challenging.
 
 ## Difficulties
 
-Fill in any issues you encountered and how you solved them before submission.
+It was first time with some elements of this project to work with and here was a lot of new to me.
 
 ## AI assistance
 
-This project was generated and refined with AI assistance. Review the code, run the tests, and adapt the documentation before sending it to the internship reviewer.
+This project was partly generated and refined with AI assistance.
